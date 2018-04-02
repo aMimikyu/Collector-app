@@ -39,4 +39,4 @@
 
 
 
-![ERD](https://github.com/aMimikyu/Collector-app/blob/master/images/ERD.png?raw=true)
+![ERD](https://github.com/aMimikyu/Collector-app/blob/master/images/ΔΟΣ.png?raw=true)
