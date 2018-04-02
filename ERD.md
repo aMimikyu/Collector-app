@@ -36,3 +36,7 @@
 
 
 ## Το διάγραμμα οντοτήτων συσχετήσεων
+
+
+
+![ERD](https://github.com/aMimikyu/Collector-app/blob/master/images/ERD.png?raw=true)
