@@ -69,7 +69,6 @@ CREATE TABLE Items_Owned ( Username VARCHAR(30),
 			Item VARCHAR(255),
 			FOREIGN KEY itms_ownd_usrnm_fk (Username) REFERENCES Users(Username) ON DELETE CASCADE,
 			FOREIGN KEY itms_ownd_colID_fk (Collection_ID) REFERENCES Collections(Collection_ID) ON DELETE CASCADE,
-			FOREIGN KEY itms_ownd_itm_fk (Item) REFERENCES Collection_Items(Item) ON DELETE CASCADE,
 			PRIMARY KEY itms_ownd_usrnm_colID_itm_pk (Username,Collection_ID,Item));
 
 
