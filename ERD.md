@@ -56,7 +56,7 @@
 
 
 
-![ERD](https://github.com/aMimikyu/Collector-app/blob/master/images/ERD2.png?raw=true)
+![ERD](https://github.com/aMimikyu/Collector-app/blob/master/images/ERD1.png?raw=true)
 
 Δύο χρήστες δεν μπορούν να έχουν το ίδιο όνομα χρήστη
 
