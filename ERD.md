@@ -38,11 +38,11 @@
 
 
 
-![ERD](https://github.com/aMimikyu/Collector-app/blob/master/images/ΔΟΣ.png?raw=true)
+![ERD](https://github.com/aMimikyu/Collector-app/blob/master/images/ERD2.png?raw=true)
 
 ## Το Σχεσιακό μοντέλο
 
 **Μετά τις μετατροπές:**
 
 
-![Physical](https://github.com/aMimikyu/Collector-app/blob/master/images/Σχεσιακό.png?raw=true)
+![Physical](https://github.com/aMimikyu/Collector-app/blob/master/images/Physical2.png?raw=true)
