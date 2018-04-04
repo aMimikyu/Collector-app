@@ -1,6 +1,7 @@
+# Holds data about the registered users
 
 CREATE TABLE Users ( Username VARCHAR(30), 
-                    Password CHAR(65) NOT NULL,   
+                    Password CHAR(65) NOT NULL,     # will store SHA-256 hash of the password
                     email   VARCHAR(60),
                     Phone_Number VARCHAR(20),
                     City VARCHAR(50),
@@ -9,6 +10,7 @@ CREATE TABLE Users ( Username VARCHAR(30),
                     PRIMARY KEY users_usrnm_pk (Username));
 
 
+# Holds data about the created collections
 
 CREATE TABLE Collections ( Collection_ID INT UNSIGNED AUTO_INCREMENT ,
                           Name VARCHAR(100) NOT NULL,
@@ -19,10 +21,11 @@ CREATE TABLE Collections ( Collection_ID INT UNSIGNED AUTO_INCREMENT ,
                                         'Souvenirs', 'Toys,Games & Dolls', 'Other') NOT NULL,
                           Owner VARCHAR(30),
                           Creation_Date DATETIME NOT NULL,
-                          FOREIGN KEY collections_ownr_fk (Owner) REFERENCES Users(Username) ON DELETE SET NULL,        
+                          FOREIGN KEY collections_ownr_fk (Owner) REFERENCES Users(Username) ON DELETE SET NULL,   # if the owner is deleted, don't delete the collection       
                           PRIMARY KEY collections_colID_pk (Collection_ID));
 
 
+# Holds data about which users follow which collections			  
 
 CREATE TABLE Collectors ( Username VARCHAR(30),
 	  		  Collection_ID INT UNSIGNED,
@@ -32,14 +35,15 @@ CREATE TABLE Collectors ( Username VARCHAR(30),
 	  		  PRIMARY KEY collectors_usrnm_colID_pk (Username,Collection_ID));
 
 
-
+# Holds data about which users "liked" which collections
+			  
 CREATE TABLE Liked_Collections ( Username VARCHAR(30),
 				 Collection_ID INT UNSIGNED,
 				 FOREIGN KEY liked_usrnm_fk (Username) REFERENCES Users(Username) ON DELETE CASCADE ,
 				 FOREIGN KEY liked_colID_fk (Collection_ID) REFERENCES Collections(Collection_ID) ON DELETE CASCADE,
 				 PRIMARY KEY liked_usrnm_colID_pk (Username,Collection_ID));
 
-
+# Holds data about which users commented on which collections and information about the comment
 
 CREATE TABLE Collection_Comments ( Comment_ID  INT AUTO_INCREMENT, 
 				   Username VARCHAR(30) NOT NULL,
@@ -50,7 +54,7 @@ CREATE TABLE Collection_Comments ( Comment_ID  INT AUTO_INCREMENT,
 				   FOREIGN KEY col_comm_colID_fk (Collection_ID) REFERENCES Collections(Collection_ID) ON DELETE CASCADE,
 				   PRIMARY KEY col_comm_comID_pk (Comment_ID));
 
-
+# Holds data about which items each collection has
 
 CREATE TABLE Collection_Items ( Collection_ID INT UNSIGNED,
 			        Item VARCHAR(255),
@@ -58,7 +62,8 @@ CREATE TABLE Collection_Items ( Collection_ID INT UNSIGNED,
 				PRIMARY KEY col_itms_itm_colID_pk (Collection_ID,Item));
 
 
-
+# Holds data about which items are owned by which user and the collection they belong to
+			  
 CREATE TABLE Items_Owned ( Username VARCHAR(30),
 			Collection_ID INT UNSIGNED,
 			Item VARCHAR(255),
